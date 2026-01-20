@@ -5,50 +5,46 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
-  <meta name="theme-color" content="#0b0f1a" />
+  <meta name="theme-color" content="#070A14" />
 
-  <title>Your Name — Front-end Developer Portfolio</title>
-  <meta name="description" content="Portfolio cá nhân: dự án, kỹ năng và thông tin liên hệ." />
+  <title>Your Name — Front-end Portfolio</title>
+  <meta name="description" content="Portfolio cá nhân: giới thiệu, kỹ năng, dự án và liên hệ." />
 
-  <!-- Reveal animations only if JS is available (prevents hiding content for no-JS users). -->
+  <!-- Enable JS-enhanced motion without hiding content for no-JS users -->
   <script>document.documentElement.classList.add('js');</script>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Fonts (lightweight + professional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Optional: lightweight structured data (replace placeholders). -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Your Name",
-    "jobTitle":"Front-end Developer",
-    "url":"https://your-username.github.io",
-    "sameAs":[
-      "https://github.com/your-username",
-      "https://www.linkedin.com/in/your-handle"
-    ]
-  }
-  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- IMPORTANT: top anchor must be in normal flow (NOT on sticky header) -->
+  <div id="top" class="top-anchor" aria-hidden="true"></div>
+
   <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
 
-  <header class="site-header" id="top">
+  <!-- Cursor glow (JS updates CSS vars; auto-hidden on touch/reduced motion) -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Trang chủ">
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-text">YourName</span>
       </a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Điều hướng chính">
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#skills">Skills</a>
         <a class="nav-link" href="#projects">Projects</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
 
-      <!-- CSS-only mobile menu via <details> -->
+      <!-- Mobile menu (CSS-only) -->
       <details class="nav-drawer" aria-label="Menu di động">
         <summary class="drawer-toggle">
           <span class="sr-only">Mở menu</span>
@@ -66,6 +62,9 @@
         </div>
       </details>
     </div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
   </header>
 
   <main id="main">
@@ -74,18 +73,18 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="kicker reveal" data-reveal>
-            <span class="dot" aria-hidden="true"></span>
+            <span class="status-dot" aria-hidden="true"></span>
             Available for freelance • Open to opportunities
           </p>
 
           <h1 class="hero-title reveal" data-reveal>
-            Xin chào, tôi là <span class="gradient-text">Your Name</span>.<br />
-            Tôi xây trải nghiệm web <span class="underline">mượt</span>, <span class="underline">tinh</span> và <span class="underline">có hồn</span>.
+            Tôi là <span class="gradient-text">Your Name</span>.<br />
+            Tôi tạo giao diện web <span class="underline">sắc</span> — <span class="underline">mượt</span> — <span class="underline">có nhịp</span>.
           </h1>
 
           <p class="hero-subtitle reveal" data-reveal>
-            Front-end Developer / UI Engineer — tập trung vào hiệu năng, accessibility và chuyển động tinh tế.
-            Tôi biến ý tưởng trừu tượng thành giao diện “đáng nhớ”.
+            Front-end / UI Engineer tập trung vào typography, motion có mục đích, accessibility và hiệu năng.
+            Mỗi pixel đều có lý do tồn tại.
           </p>
 
           <div class="hero-cta reveal" data-reveal>
@@ -99,27 +98,37 @@
             </a>
           </div>
 
-          <div class="hero-social reveal" data-reveal aria-label="Liên kết mạng xã hội">
+          <div class="hero-badges reveal" data-reveal aria-label="Điểm mạnh">
+            <span class="badge">Performance-first</span>
+            <span class="badge">A11y-minded</span>
+            <span class="badge">Design systems</span>
+            <span class="badge">Micro-interactions</span>
+          </div>
+
+          <div class="hero-social reveal" data-reveal aria-label="Liên kết">
             <a class="icon-link" href="#" aria-label="GitHub (thay link)">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.4 11.4 0 0 0-3.6 22.2c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.2 3 .9.1-.7.4-1.2.7-1.4-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.7 5.6-5.3 5.9.4.4.8 1.1.8 2.2v3.2c0 .4.2.7.8.6A11.4 11.4 0 0 0 12 .7z"/></svg>
+              <span class="i-dot" aria-hidden="true"></span>
               <span>GitHub</span>
+              <span class="chev" aria-hidden="true">↗</span>
             </a>
             <a class="icon-link" href="#" aria-label="LinkedIn (thay link)">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.8-3s-2 1.4-2 2.9v5.7H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.4 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.2 20.4H3.6V9h3.6v11.4z"/></svg>
+              <span class="i-dot" aria-hidden="true"></span>
               <span>LinkedIn</span>
+              <span class="chev" aria-hidden="true">↗</span>
             </a>
-            <a class="icon-link" href="#" aria-label="CV PDF (thay link)">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5"/></svg>
+            <a class="icon-link" href="#" aria-label="Resume (thay link)">
+              <span class="i-dot" aria-hidden="true"></span>
               <span>Resume</span>
+              <span class="chev" aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
 
-        <aside class="hero-panel reveal" data-reveal aria-label="Bảng nổi bật">
+        <aside class="hero-panel reveal" data-reveal aria-label="Signature panel">
           <div class="panel-card">
-            <div class="panel-top">
-              <p class="panel-title">Signature</p>
-              <p class="panel-sub">Design + Performance</p>
+            <div class="panel-head">
+              <p class="panel-k">Signature</p>
+              <p class="panel-v">Clarity • Rhythm • Depth</p>
             </div>
 
             <div class="panel-metrics">
@@ -128,20 +137,24 @@
                 <span class="metric-v">UI/UX • A11y • Perf</span>
               </div>
               <div class="metric">
-                <span class="metric-k">Stack</span>
-                <span class="metric-v">HTML • CSS • JS</span>
+                <span class="metric-k">Craft</span>
+                <span class="metric-v">Typography • Motion</span>
               </div>
               <div class="metric">
-                <span class="metric-k">Focus</span>
-                <span class="metric-v">Motion with purpose</span>
+                <span class="metric-k">Output</span>
+                <span class="metric-v">Static • Fast • Clean</span>
               </div>
             </div>
 
-            <div class="panel-tags">
-              <span class="tag">Micro-interactions</span>
-              <span class="tag">Design systems</span>
-              <span class="tag">Responsive</span>
-              <span class="tag">SEO-ready</span>
+            <div class="panel-mini">
+              <div class="mini">
+                <span class="mini-k">Focus</span>
+                <span class="mini-v">Purposeful motion</span>
+              </div>
+              <div class="mini">
+                <span class="mini-k">Style</span>
+                <span class="mini-v">Editorial aura</span>
+              </div>
             </div>
 
             <div class="panel-orbits" aria-hidden="true">
@@ -154,64 +167,62 @@
       </div>
 
       <div class="hero-backdrop" aria-hidden="true"></div>
-      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-gridlines" aria-hidden="true"></div>
     </section>
 
     <!-- ABOUT -->
-    <section class="section" id="about" aria-label="About me">
+    <section class="section" id="about" aria-label="About">
       <div class="container">
         <header class="section-head reveal" data-reveal>
           <h2 class="h2">
             <span class="section-label">About</span>
-            Câu chuyện & giá trị
+            Câu chuyện, giá trị, cách làm
           </h2>
           <p class="lead">
-            Tôi thích các giao diện “ít nhưng đắt”: rõ ràng, có nhịp thở, và tạo cảm giác cao cấp ngay từ lần cuộn đầu tiên.
+            Tôi ưu tiên trải nghiệm “đọc được nhanh”: bố cục rõ ràng, điểm nhấn đúng chỗ, và chuyển động dẫn mắt người dùng.
           </p>
         </header>
 
         <div class="about-grid">
           <article class="card reveal" data-reveal>
             <h3 class="h3">Tôi làm gì?</h3>
-            <p>
-              Tôi thiết kế và triển khai giao diện web theo hướng hệ thống: component rõ ràng, CSS có cấu trúc,
-              tương tác mượt, và tối ưu hiệu năng (layout, paint, assets).
+            <p class="p">
+              Thiết kế & triển khai UI có hệ thống (semantic HTML, CSS architecture, motion tinh tế),
+              tối ưu hiệu năng và khả năng truy cập.
             </p>
             <ul class="checklist">
-              <li>Thiết kế UI/UX với logic nội dung trước (content-first)</li>
-              <li>Chuyển động tinh tế, phục vụ sự chú ý người dùng</li>
-              <li>Responsive, accessibility và SEO cơ bản</li>
+              <li>Content-first: cấu trúc thông tin trước, “đẹp” sau</li>
+              <li>Motion = nhịp chú ý, không phải trang trí</li>
+              <li>Responsive + accessibility là mặc định</li>
             </ul>
           </article>
 
           <article class="card reveal" data-reveal>
-            <h3 class="h3">Tôi tin vào điều gì?</h3>
-            <p>
-              Một portfolio tốt không chỉ “đẹp” — nó truyền tải tư duy: cách bạn tổ chức thông tin, tiết chế hiệu ứng,
-              và kể câu chuyện dự án.
+            <h3 class="h3">Tôi khác ở đâu?</h3>
+            <p class="p">
+              Tôi chú trọng typography và khoảng trắng để tạo cảm giác “premium”,
+              đồng thời dùng hiệu ứng có kiểm soát để tăng cảm nhận chất lượng.
             </p>
             <div class="quote">
-              <p>“Design is the clarity of intent. Motion is the rhythm of attention.”</p>
-              <span class="quote-meta">— Personal principle</span>
+              <p>“Đẹp là khi người dùng hiểu nhanh hơn — và nhớ lâu hơn.”</p>
+              <span class="quote-meta">— Working principle</span>
             </div>
           </article>
 
-          <article class="card card-stats reveal" data-reveal aria-label="Số liệu nhanh">
+          <article class="card card-stats reveal" data-reveal aria-label="Highlights">
             <div class="stat">
-              <span class="stat-n">10+</span>
-              <span class="stat-t">UI screens (sample)</span>
+              <span class="stat-n">3+</span>
+              <span class="stat-t">featured projects</span>
             </div>
             <div class="stat">
-              <span class="stat-n">3</span>
-              <span class="stat-t">Featured projects</span>
+              <span class="stat-n">A11y</span>
+              <span class="stat-t">focus-first UX</span>
             </div>
             <div class="stat">
-              <span class="stat-n">A</span>
-              <span class="stat-t">Accessibility mindset</span>
+              <span class="stat-n">Fast</span>
+              <span class="stat-t">light assets</span>
             </div>
-            <p class="muted">
-              (Nội dung mẫu — thay bằng số liệu thật: năm kinh nghiệm, dự án, khách hàng, v.v.)
-            </p>
+            <p class="muted">(Placeholder — thay bằng số liệu thật của bạn.)</p>
           </article>
         </div>
       </div>
@@ -225,7 +236,7 @@
             <span class="section-label">Skills</span>
             Năng lực cốt lõi
           </h2>
-          <p class="lead">Kết hợp giữa nền tảng front-end, tư duy thiết kế và tối ưu trải nghiệm.</p>
+          <p class="lead">Tập trung vào nền tảng mạnh + kỹ thuật tạo cảm giác “mượt” và “đắt”.</p>
         </header>
 
         <div class="skills-grid">
@@ -234,10 +245,10 @@
 
             <div class="skill">
               <div class="skill-row">
-                <span>HTML Semantic</span>
+                <span>Semantic HTML</span>
                 <span class="skill-val">92%</span>
               </div>
-              <div class="bar" style="--level: 92%"><span></span></div>
+              <div class="bar" style="--level:92%"><span></span></div>
             </div>
 
             <div class="skill">
@@ -245,15 +256,15 @@
                 <span>CSS Architecture</span>
                 <span class="skill-val">90%</span>
               </div>
-              <div class="bar" style="--level: 90%"><span></span></div>
+              <div class="bar" style="--level:90%"><span></span></div>
             </div>
 
             <div class="skill">
               <div class="skill-row">
                 <span>Vanilla JS</span>
-                <span class="skill-val">78%</span>
+                <span class="skill-val">80%</span>
               </div>
-              <div class="bar" style="--level: 78%"><span></span></div>
+              <div class="bar" style="--level:80%"><span></span></div>
             </div>
 
             <div class="chip-row">
@@ -267,42 +278,42 @@
           <div class="card reveal" data-reveal>
             <h3 class="h3">UI/UX</h3>
             <ul class="bullets">
-              <li>Information hierarchy & content design</li>
-              <li>Component thinking • Design system basics</li>
-              <li>Accessibility (ARIA, focus, contrast)</li>
-              <li>Micro-interactions & motion design</li>
+              <li>Hierarchy & layout rhythm</li>
+              <li>Component mindset</li>
+              <li>Accessibility: focus, contrast, ARIA</li>
+              <li>Micro-interactions</li>
             </ul>
+
             <div class="mini-grid">
               <div class="mini">
                 <span class="mini-k">A11y</span>
-                <span class="mini-v">Focus-first</span>
+                <span class="mini-v">Keyboard-first</span>
               </div>
               <div class="mini">
                 <span class="mini-k">Perf</span>
                 <span class="mini-v">Paint-light</span>
               </div>
               <div class="mini">
-                <span class="mini-k">UI</span>
-                <span class="mini-v">Crisp</span>
+                <span class="mini-k">Type</span>
+                <span class="mini-v">Readable scale</span>
               </div>
               <div class="mini">
                 <span class="mini-k">Motion</span>
-                <span class="mini-v">Purposeful</span>
+                <span class="mini-v">Staggered reveal</span>
               </div>
             </div>
           </div>
 
           <div class="card reveal" data-reveal>
-            <h3 class="h3">Tools</h3>
+            <h3 class="h3">Tooling</h3>
             <div class="tools">
               <div class="tool"><span class="tool-dot"></span>Figma</div>
               <div class="tool"><span class="tool-dot"></span>Git/GitHub</div>
               <div class="tool"><span class="tool-dot"></span>Chrome DevTools</div>
-              <div class="tool"><span class="tool-dot"></span>Performance basics</div>
-              <div class="tool"><span class="tool-dot"></span>SVG/Icons</div>
+              <div class="tool"><span class="tool-dot"></span>Lighthouse basics</div>
+              <div class="tool"><span class="tool-dot"></span>SVG Icons</div>
               <div class="tool"><span class="tool-dot"></span>Content writing</div>
             </div>
-            <p class="muted">Tip: thay bằng công cụ thật bạn đang dùng.</p>
           </div>
         </div>
       </div>
@@ -313,27 +324,29 @@
       <div class="container">
         <header class="section-head reveal" data-reveal>
           <h2 class="h2">
-            <span class="section-label">Portfolio</span>
+            <span class="section-label">Projects</span>
             Dự án nổi bật
           </h2>
-          <p class="lead">Mỗi dự án là một câu chuyện: vấn đề, quyết định thiết kế, và kết quả.</p>
+          <p class="lead">Trình bày theo kiểu “case highlight”: rõ vấn đề, rõ giải pháp, rõ kết quả.</p>
         </header>
 
         <div class="projects-grid">
-          <article class="project-card reveal" data-reveal>
+          <!-- Featured (span wider) -->
+          <article class="project-card project-featured reveal" data-reveal>
             <figure class="thumb" aria-label="Ảnh minh hoạ dự án">
               <img
                 alt="Project thumbnail"
                 loading="lazy"
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23121b34'/%3E%3Cstop offset='0.5' stop-color='%232b1b4a'/%3E%3Cstop offset='1' stop-color='%230c1022'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23g)'/%3E%3Ccircle cx='260' cy='260' r='170' fill='%23b7fffb' fill-opacity='0.12'/%3E%3Ccircle cx='760' cy='420' r='220' fill='%23a78bfa' fill-opacity='0.12'/%3E%3Cpath d='M0 620 C 220 540, 420 720, 720 640 S 1040 560, 1200 680 L 1200 800 L 0 800 Z' fill='%23ffffff' fill-opacity='0.06'/%3E%3Ctext x='60' y='120' font-family='ui-monospace, SFMono-Regular' font-size='44' fill='%23ffffff' fill-opacity='0.82'%3EProject One%3C/text%3E%3Ctext x='60' y='170' font-family='ui-monospace, SFMono-Regular' font-size='22' fill='%23ffffff' fill-opacity='0.58'%3EUI + Motion + Performance%3C/text%3E%3C/svg%3E"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230b1226'/%3E%3Cstop offset='0.45' stop-color='%2321163e'/%3E%3Cstop offset='1' stop-color='%23060a14'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23g)'/%3E%3Ccircle cx='420' cy='340' r='240' fill='%237df9ff' fill-opacity='0.14'/%3E%3Ccircle cx='1160' cy='520' r='280' fill='%23a78bfa' fill-opacity='0.14'/%3E%3Cpath d='M0 720 C 320 590, 560 820, 860 710 S 1260 580, 1600 760 L 1600 900 L 0 900 Z' fill='%23ffffff' fill-opacity='0.06'/%3E%3Ctext x='70' y='140' font-family='Inter, Arial' font-size='56' fill='%23ffffff' fill-opacity='0.88'%3EFeatured Project%3C/text%3E%3Ctext x='70' y='200' font-family='Inter, Arial' font-size='24' fill='%23ffffff' fill-opacity='0.60'%3ETwitter%20Motion%20%2B%20Performance%3C/text%3E%3C/svg%3E"
               />
             </figure>
 
             <div class="project-body">
               <div class="project-top">
-                <h3 class="project-title">Project One — Landing Page “Aurora”</h3>
+                <div class="project-chip">Featured</div>
+                <h3 class="project-title">Aurora Landing — Motion-led UI</h3>
                 <p class="project-desc">
-                  Trang giới thiệu sản phẩm với bố cục editorial, hiệu ứng hover có chiều sâu và scroll reveal mượt.
+                  Hero editorial + reveal theo nhịp cuộn, hover depth tinh tế, tối ưu hiệu năng để cảm giác “mượt” thật.
                 </p>
               </div>
 
@@ -355,15 +368,15 @@
               <img
                 alt="Project thumbnail"
                 loading="lazy"
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Cdefs%3E%3CradialGradient id='r' cx='30%25' cy='25%25' r='85%25'%3E%3Cstop stop-color='%2322c55e' stop-opacity='0.20'/%3E%3Cstop offset='0.55' stop-color='%230b1226' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23070a14' stop-opacity='1'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23r)'/%3E%3Cpath d='M60 590 L 420 380 L 660 520 L 920 280 L 1140 420' fill='none' stroke='%23ffffff' stroke-opacity='0.18' stroke-width='16' stroke-linecap='round'/%3E%3Cpath d='M60 590 L 420 380 L 660 520 L 920 280 L 1140 420' fill='none' stroke='%2322c55e' stroke-opacity='0.35' stroke-width='4' stroke-linecap='round'/%3E%3Ctext x='60' y='120' font-family='ui-monospace, SFMono-Regular' font-size='44' fill='%23ffffff' fill-opacity='0.82'%3EProject Two%3C/text%3E%3Ctext x='60' y='170' font-family='ui-monospace, SFMono-Regular' font-size='22' fill='%23ffffff' fill-opacity='0.58'%3EData UI + Layout System%3C/text%3E%3C/svg%3E"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Cdefs%3EradialGradient%20id='r'%20cx='30%25'%20cy='25%25'%20r='85%25'%3E%3Cstop%20stop-color='%2334d399'%20stop-opacity='0.22'/%3E%3Cstop%20offset='0.6'%20stop-color='%230b1226'%20stop-opacity='1'/%3E%3Cstop%20offset='1'%20stop-color='%23060a14'%20stop-opacity='1'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect%20width='1200'%20height='800'%20fill='url(%23r)'/%3E%3Cpath%20d='M70%20590%20L%20430%20380%20L%20660%20520%20L%20920%20280%20L%201140%20420'%20fill='none'%20stroke='%23ffffff'%20stroke-opacity='0.16'%20stroke-width='16'%20stroke-linecap='round'/%3E%3Ctext%20x='60'%20y='120'%20font-family='Inter,%20Arial'%20font-size='44'%20fill='%23ffffff'%20fill-opacity='0.84'%3EDashboard%3C/text%3E%3Ctext%20x='60'%20y='170'%20font-family='Inter,%20Arial'%20font-size='22'%20fill='%23ffffff'%20fill-opacity='0.58'%3EGrid%20%2B%20Data%20Hierarchy%3C/text%3E%3C/svg%3E"
               />
             </figure>
 
             <div class="project-body">
               <div class="project-top">
-                <h3 class="project-title">Project Two — Dashboard UI (Static)</h3>
+                <h3 class="project-title">Dashboard UI — Read-fast</h3>
                 <p class="project-desc">
-                  Thiết kế dashboard tĩnh: hệ thống thẻ, bảng, và phân cấp thông tin rõ ràng, ưu tiên đọc nhanh.
+                  Hệ thống thẻ và phân cấp thông tin rõ ràng, tối ưu nhịp đọc, phù hợp sản phẩm dữ liệu.
                 </p>
               </div>
               <div class="project-tags">
@@ -383,15 +396,15 @@
               <img
                 alt="Project thumbnail"
                 loading="lazy"
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Cdefs%3E%3ClinearGradient id='l' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop stop-color='%23f472b6' stop-opacity='0.20'/%3E%3Cstop offset='0.55' stop-color='%230b1226'/%3E%3Cstop offset='1' stop-color='%23070a14'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23l)'/%3E%3Crect x='90' y='220' width='1020' height='460' rx='36' fill='%23ffffff' fill-opacity='0.06'/%3E%3Crect x='140' y='280' width='420' height='26' rx='13' fill='%23ffffff' fill-opacity='0.18'/%3E%3Crect x='140' y='330' width='700' height='18' rx='9' fill='%23ffffff' fill-opacity='0.12'/%3E%3Crect x='140' y='370' width='640' height='18' rx='9' fill='%23ffffff' fill-opacity='0.12'/%3E%3Crect x='140' y='440' width='250' height='56' rx='18' fill='%23f472b6' fill-opacity='0.18'/%3E%3Ctext x='60' y='120' font-family='ui-monospace, SFMono-Regular' font-size='44' fill='%23ffffff' fill-opacity='0.82'%3EProject Three%3C/text%3E%3Ctext x='60' y='170' font-family='ui-monospace, SFMono-Regular' font-size='22' fill='%23ffffff' fill-opacity='0.58'%3EEditorial + Accessibility%3C/text%3E%3C/svg%3E"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Cdefs%3E%3ClinearGradient%20id='l'%20x1='0'%20y1='1'%20x2='1'%20y2='0'%3E%3Cstop%20stop-color='%23fb7185'%20stop-opacity='0.20'/%3E%3Cstop%20offset='0.55'%20stop-color='%230b1226'/%3E%3Cstop%20offset='1'%20stop-color='%23060a14'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width='1200'%20height='800'%20fill='url(%23l)'/%3E%3Crect%20x='90'%20y='220'%20width='1020'%20height='460'%20rx='36'%20fill='%23ffffff'%20fill-opacity='0.06'/%3E%3Crect%20x='140'%20y='280'%20width='420'%20height='26'%20rx='13'%20fill='%23ffffff'%20fill-opacity='0.18'/%3E%3Crect%20x='140'%20y='330'%20width='700'%20height='18'%20rx='9'%20fill='%23ffffff'%20fill-opacity='0.12'/%3E%3Crect%20x='140'%20y='440'%20width='280'%20height='56'%20rx='18'%20fill='%23fb7185'%20fill-opacity='0.18'/%3E%3Ctext%20x='60'%20y='120'%20font-family='Inter,%20Arial'%20font-size='44'%20fill='%23ffffff'%20fill-opacity='0.84'%3EPortfolio%3C/text%3E%3Ctext%20x='60'%20y='170'%20font-family='Inter,%20Arial'%20font-size='22'%20fill='%23ffffff'%20fill-opacity='0.58'%3ETypography%20%2B%20A11y%3C/text%3E%3C/svg%3E"
               />
             </figure>
 
             <div class="project-body">
               <div class="project-top">
-                <h3 class="project-title">Project Three — Portfolio Template (Custom)</h3>
+                <h3 class="project-title">Portfolio Template — Custom</h3>
                 <p class="project-desc">
-                  Template portfolio “không giống template”: typographic mạnh, nền sống động, và micro-interactions tinh tế.
+                  Typography mạnh, spacing “đúng nhịp”, micro-interactions tinh tế để tạo cảm giác cao cấp.
                 </p>
               </div>
               <div class="project-tags">
@@ -422,9 +435,9 @@
         <header class="section-head reveal" data-reveal>
           <h2 class="h2">
             <span class="section-label">Contact</span>
-            Cùng tạo thứ “đáng nhớ”
+            Kết nối nhanh
           </h2>
-          <p class="lead">Form này sẽ mở email (mailto) — không cần backend, phù hợp GitHub Pages.</p>
+          <p class="lead">Form dùng <strong>mailto</strong> (static-friendly). Nếu cần gửi thật, dùng Formspree/Netlify Forms.</p>
         </header>
 
         <div class="contact-grid">
@@ -449,14 +462,15 @@
                 <span>Gửi qua Email</span>
                 <span class="btn-icon" aria-hidden="true">→</span>
               </button>
-              <p class="muted">Tip: thay <code>you@domain.com</code> trong <code>script.js</code> bằng email thật.</p>
+              <p class="muted">Thay <code>you@domain.com</code> trong <code>script.js</code> bằng email thật.</p>
             </div>
 
             <p class="form-note" role="status" aria-live="polite" id="formNote"></p>
           </form>
 
           <aside class="card contact-side reveal" data-reveal>
-            <h3 class="h3">Thông tin nhanh</h3>
+            <h3 class="h3">Thông tin</h3>
+
             <div class="contact-item">
               <span class="contact-k">Email</span>
               <a class="contact-v" href="mailto:you@domain.com">you@domain.com</a>
@@ -466,23 +480,15 @@
               <span class="contact-v">Hà Nội, Việt Nam (placeholder)</span>
             </div>
             <div class="contact-item">
-              <span class="contact-k">Response time</span>
+              <span class="contact-k">Reply</span>
               <span class="contact-v">24–48h</span>
             </div>
 
             <div class="divider" aria-hidden="true"></div>
 
             <p class="muted">
-              Nếu bạn muốn form gửi thật (không mở mail), có thể dùng dịch vụ form endpoint (Formspree/Netlify Forms).
-              Nhưng phiên bản hiện tại giữ đúng ràng buộc “static-only”.
+              Portfolio này ưu tiên: tải nhanh, rõ ràng, chuyển động mượt và “đủ khác” để nhà tuyển dụng nhớ.
             </p>
-
-            <div class="contact-cta">
-              <a class="btn btn-ghost" href="#top">
-                <span>Lên đầu trang</span>
-                <span class="btn-icon" aria-hidden="true">↑</span>
-              </a>
-            </div>
           </aside>
         </div>
       </div>
@@ -499,6 +505,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating back-to-top (fixes “bấm lên đầu trang” reliably) -->
+  <button class="to-top" type="button" aria-label="Lên đầu trang" data-to-top>
+    <span class="to-top-ic" aria-hidden="true">↑</span>
+    <span class="to-top-t">Top</span>
+  </button>
 
   <script src="script.js" defer></script>
 </body>
